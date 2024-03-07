@@ -22,6 +22,7 @@ export default {
                 );
                 const data = await results.json();
                 this.LeadingCause = data.results
+                console.log(data);
             } catch(error){
                 console.log(error);
             }

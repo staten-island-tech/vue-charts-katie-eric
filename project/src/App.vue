@@ -1,3 +1,44 @@
+<!-- <template>
+  <BarChart />
+</template>
+
+<script>
+import BarChart from '../src/components/BarChart.vue'
+
+export default {
+  name: 'App',
+  components: { BarChart }
+}
+</script> -->
+
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
+
+<template>
+  <nav>
+        <RouterLink to="/bar">Bar Chart</RouterLink>
+        <RouterLink to="/pie ">Pie Graph</RouterLink>
+        <!-- <RouterLink to="/">Cart</RouterLink> -->
+      </nav>
+      <br>
+      <Router-view />
+</template>
+
+
+<style>
+nav{
+  text-align: center;
+  margin-bottom: 50px;
+}
+</style>
+
+
+<!-- <script setup>
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+</script>
+
 <template>
   <BarChart />
 </template>
@@ -10,36 +51,6 @@ export default {
   components: { BarChart }
 }
 </script>
-
-
-
-
-
-
-
-
-<!-- <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-</template>
-
 <style scoped>
 header {
   line-height: 1.5;

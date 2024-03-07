@@ -16,6 +16,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+  <h1 class="title">Trees</h1> <br>
   <nav>
         <RouterLink to="/bar">Bar Chart</RouterLink>
         <RouterLink to="/pie ">Pie Graph</RouterLink>
@@ -33,6 +34,10 @@ nav{
 }
 </style>
 
+<style>
+
+
+</style>
 
 <!-- <script setup>
 import { RouterLink, RouterView } from 'vue-router'

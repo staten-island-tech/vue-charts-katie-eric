@@ -16,6 +16,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+  <h1 class="title">Trees</h1> <br>
   <nav>
         <RouterLink to="/bar">Bar Chart</RouterLink>
         <RouterLink to="/pie ">Pie Graph</RouterLink>
@@ -33,6 +34,10 @@ nav{
 }
 </style>
 
+<style>
+
+
+</style>
 
 <!-- <script setup>
 import { RouterLink, RouterView } from 'vue-router'
@@ -40,22 +45,17 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <BarChart />
 </template>
 
+<script>
+import BarChart from '../src/components/BarChart.vue'
+
+export default {
+  name: 'App',
+  components: { BarChart }
+}
+</script>
 <style scoped>
 header {
   line-height: 1.5;

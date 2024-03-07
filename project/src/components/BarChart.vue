@@ -24,10 +24,11 @@ export default {
     this.loaded = false
 
     try {
-      const { userlist } = await fetch('/api/userlist')
+      const { userlist } = await fetch('https://data.cityofnewyork.us/resource/jb7j-dtam.json')
       this.chartdata = userlist
-
       this.loaded = true
+
+      console.log(userlist)
     } catch (e) {
       console.error(e)
     }

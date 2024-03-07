@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <BarChart />
 </template>
 
@@ -9,13 +9,29 @@ export default {
   name: 'App',
   components: { BarChart }
 }
+</script> -->
+
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
+<template>
+  <nav>
+        <RouterLink to="/bar">Bar Chart</RouterLink>
+        <RouterLink to="/pie ">Pie Graph</RouterLink>
+        <!-- <RouterLink to="/">Cart</RouterLink> -->
+      </nav>
+      <br>
+      <Router-view />
+</template>
 
 
-
-
-
+<style>
+nav{
+  text-align: center;
+  margin-bottom: 50px;
+}
+</style>
 
 
 <!-- <script setup>

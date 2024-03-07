@@ -16,11 +16,10 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1 class="title">Trees</h1> <br>
+  <h1 class="title">Causes of Death</h1> <br>
   <nav>
         <RouterLink to="/bar">Bar Chart</RouterLink>
         <RouterLink to="/pie ">Pie Graph</RouterLink>
-        <!-- <RouterLink to="/">Cart</RouterLink> -->
       </nav>
       <br>
       <Router-view />

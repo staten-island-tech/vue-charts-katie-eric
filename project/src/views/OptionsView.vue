@@ -8,7 +8,7 @@
 export default {
     data(){
         return {
-            LeadingCause:[ ],
+            leading_cause:[ ],
         };
     },
     mounted: function(){

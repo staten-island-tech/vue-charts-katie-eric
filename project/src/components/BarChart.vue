@@ -5,6 +5,7 @@
   <div class="container">
     <Bar v-if="loaded" :data="chartData" />
   </div>
+  
 </template>
 
 <script>
@@ -26,8 +27,8 @@ export default {
     try {
       const { userlist } = await fetch('https://data.cityofnewyork.us/resource/jb7j-dtam.json')
       this.chartdata = userlist
-      this.loaded = true
 
+      this.loaded = true
       console.log(userlist)
     } catch (e) {
       console.error(e)

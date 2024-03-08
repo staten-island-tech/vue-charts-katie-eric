@@ -4,6 +4,7 @@
       :options="chartOptions"
       :data="chartData"
     />
+    <h1>Bar</h1>
   </template>
   
   <script>
@@ -11,7 +12,6 @@
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
   
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-  
   export default {
     name: 'BarChart',
     components: { Bar },

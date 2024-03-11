@@ -18,7 +18,7 @@
     data() {
       return {
         chartData: {
-          labels: [ 'January', 'February', 'March' ],
+          labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia',  ],
           datasets: [ { data: [30, 20, 12] } ]
         },
         chartOptions: {

@@ -25,11 +25,19 @@ export default {
     this.loaded = false
 
     try {
-      const { userlist } = await fetch('https://data.cityofnewyork.us/resource/jb7j-dtam.json')
-      this.chartdata = userlist
+      const URL  = 'https://data.cityofnewyork.us/resource/jb7j-dtam.json';
+      async function getData(URL){
+        try { 
+          const response = await fetch(URL);
+          if()
 
-      this.loaded = true
-      console.log(userlist)
+        }
+      }
+
+      // this.chartdata = userlist
+
+      // this.loaded = true
+      // console.log(userlist)
     } catch (e) {
       console.error(e)
     }

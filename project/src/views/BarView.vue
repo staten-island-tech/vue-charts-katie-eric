@@ -11,16 +11,16 @@ export default {
   components: { BarChart }
 }
 
-const leadingCauses = ref("");
-async function getCauses(){
-  let res = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json");
-  let data = await res.json();
-  leadingCauses.value = data;
-  console.log(data);
-}
+// const leadingCauses = ref("");
+// async function getCauses(){
+//   let res = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json");
+//   let data = await res.json();
+//   leadingCauses.value = data;
+//   console.log(data);
+// }
 
-onMounted(() => {
-  getCauses();
-});
+// onMounted(() => {
+//   getCauses();
+// });
 
 </script>

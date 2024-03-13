@@ -8,15 +8,12 @@ const router = createRouter({
     {
       path: '/bar',
       name: 'bar',
-      component: BarView
+      component: () => import('../views/BarView.vue')
     },
     {
       path: '/pie',
       name: 'pie',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: PieView
+      component: () => import('../views/PieView.vue')
     },
     {
       path: '/options',

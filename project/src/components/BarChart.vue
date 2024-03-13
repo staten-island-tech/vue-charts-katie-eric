@@ -29,10 +29,16 @@ export default {
       async function getData(URL){
         try { 
           const response = await fetch(URL);
-          if()
-
+          if(response.status !=200){
+            throw new Error(response.statusText);
+          }
+          const data = await response.json();
+          console.log(data);
+        } catch (error){
+          console.log(error, "ruh roh");
         }
       }
+      getData();
 
       // this.chartdata = userlist
 

@@ -22,7 +22,7 @@ export default {
                 );
                 const data = await results.json();
                 this.LeadingCause = data.results
-                // console.log(data.leading_cause.includes("Maligant"));
+                // console.log(data.leading_cause.includes("Malignant"));
                 console.log(data);
             } catch(error){
                 console.log(error);

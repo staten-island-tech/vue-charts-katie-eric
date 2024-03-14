@@ -4,8 +4,12 @@
 </template>
 
 <script>
+import BarChart from '../components/optionsChart.vue'
 
 export default {
+  name: 'App',
+  components: { BarChart },
+
     data(){
         return {
             LeadingCause:[ ],
@@ -22,6 +26,10 @@ export default {
                 );
                 const data = await results.json();
                 this.LeadingCause = data.results
+                
+                data
+                .filter(element => element.leading_cause.includes ('Influenza'))
+                .forEach(element => console.log(element.year));
                 // console.log(data.leading_cause.includes("Malignant"));
                 console.log(data);
             } catch(error){

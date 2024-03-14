@@ -5,6 +5,7 @@
 <script>
 import PieChart from '../components/PieChart.vue'
 
+
 export default {
   name: 'App',
   components: { PieChart }
@@ -16,3 +17,5 @@ export default {
   type: 'pie',
   data: data,
 }; -->
+
+

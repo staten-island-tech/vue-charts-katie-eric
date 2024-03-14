@@ -1,10 +1,10 @@
 <template>
     <div>
-
     </div>
 </template>
 
 <script>
+
 export default {
     data(){
         return {
@@ -17,15 +17,16 @@ export default {
     methods: {
         fetchData: async function(){
             try{
-                const URL = 'https://data.cityofnewyork.us/resource/jb7j-dtam.json';
-                const response = await fetch(URL);
-                const datapoints = await response.json();
-                console.log(datapoints);
-                return (datapoints);
+                const results = await fetch(
+                    'https://data.cityofnewyork.us/resource/jb7j-dtam.json'
+                );
+                const data = await results.json();
+                this.LeadingCause = data.results
+                // console.log(data.leading_cause.includes("Malignant"));
+                console.log(data);
             } catch(error){
                 console.log(error);
             }
-            
         }
     }
 }

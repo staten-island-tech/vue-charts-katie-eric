@@ -1,4 +1,58 @@
+<!-- api bar chart data -->
+
+
 <template>
+  <div class="container">
+    <Bar v-if="loaded" :data="chartData" />
+  </div>
+  
+</template>
+
+<script>
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
+export default {
+  name: 'BarChart',
+  components: { Bar },
+  data: () => ({
+    loaded: false,
+    chartData: null
+  }),
+  async mounted () {
+    this.loaded = false
+
+    try {
+      const URL  = 'https://data.cityofnewyork.us/resource/jb7j-dtam.json';
+      async function getData(URL){
+        try { 
+          const response = await fetch(URL);
+          if(response.status !=200){
+            throw new Error(response.statusText);
+          }
+          const data = await response.json();
+          console.log(data);
+        } catch (error){
+          console.log(error, "ruh roh");
+        }
+      }
+      getData();
+
+      // this.chartdata = userlist
+
+      // this.loaded = true
+      // console.log(userlist)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+}
+</script>
+
+<!-- default bar chart below -->
+<!-- <template>
     <Bar
       id="my-chart-id"
       :options="chartOptions"
@@ -27,4 +81,4 @@
       }
     }
   }
-  </script>
+  </script> -->

@@ -1,6 +1,6 @@
 <!-- api bar chart data -->
 
-
+<!-- 
 <template>
   <div class="container">
     <Bar v-if="loaded" :data="chartData" />
@@ -49,10 +49,10 @@ export default {
     }
   }
 }
-</script>
-
-<!-- default bar chart below -->
-<!-- <template>
+</script> -->
+<!-- 
+default bar chart below  -->
+ <template>
     <Bar
       id="my-chart-id"
       :options="chartOptions"
@@ -81,4 +81,4 @@ export default {
       }
     }
   }
-  </script> -->
+  </script>

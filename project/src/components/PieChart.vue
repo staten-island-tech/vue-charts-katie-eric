@@ -8,13 +8,13 @@
   </template>
   
   <script>
-  import { Bar } from 'vue-chartjs'
+  import { Pie } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
   import {ref} from "vue";
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   export default {
     name: 'PieChart',
-    // components: { Pie },
+     components: { Pie },
     data() {
       // const count = ref('0');
       // function increaseCount(){

@@ -19,7 +19,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <h1 class="title">Causes of Death</h1> <br>
   <nav>
         <RouterLink to="/bar">Bar Chart</RouterLink>
-        <RouterLink to="/pie ">Pie Graph</RouterLink>
+        <RouterLink to="/pie ">Pie lkshdbfGraph</RouterLink>
         <RouterLink to="/options ">Options Graph</RouterLink>
       </nav>
       <br>

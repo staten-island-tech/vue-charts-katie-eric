@@ -21,7 +21,8 @@
 
       // }
       
-      let malneo = increaseCount(MalignantNeoplasms);
+      // let malneo = increaseCount(MalignantNeoplasms);
+      let malneo = 10;
       let accexceptdrug = 13;
       let alz = 12;
       return {

@@ -16,11 +16,11 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1 class="title">Causes of Death</h1> <br>
+  <h1 class="title">Occurences of Causes of Death from 2007 to 2014</h1> <br>
   <nav>
         <RouterLink to="/bar">Bar Chart</RouterLink>
-        <RouterLink to="/pie ">Pie lkshdbfGraph</RouterLink>
-        <RouterLink to="/options ">Options Graph</RouterLink>
+        <RouterLink to="/pie">Pie Graph</RouterLink>
+        <RouterLink to="/options">Options Graph</RouterLink>
       </nav>
       <br>
       <Router-view />

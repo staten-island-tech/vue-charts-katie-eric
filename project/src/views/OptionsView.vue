@@ -5,6 +5,7 @@
 
 <script>
 import BarChart from '../components/optionsChart.vue'
+import {ref} from "vue";
 
 export default {
   name: 'App',
@@ -13,6 +14,7 @@ export default {
     data(){
         return {
             LeadingCause:[ ],
+            count: 0,
         };
     },
     mounted: function(){
@@ -27,10 +29,10 @@ export default {
                 const data = await results.json();
                 this.LeadingCause = data.results
                 
+                const count = ref('0');
                 data
-                .filter(element => element.leading_cause.includes ('Influenza'))
-                .forEach(element => console.log(element.year));
-                // console.log(data.leading_cause.includes("Malignant"));
+                .filter(element => element.leading_cause.includes ('Malignant'))
+                .forEach(element => console.log(count.value++));
                 console.log(data);
             } catch(error){
                 console.log(error);

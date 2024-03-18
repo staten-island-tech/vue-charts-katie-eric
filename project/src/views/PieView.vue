@@ -1,5 +1,5 @@
 <template>
-  <BarChart />
+  <PieChart />
 </template>
 
 <script>

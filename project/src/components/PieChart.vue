@@ -1,17 +1,17 @@
 <template>
     <Pie
-      id="my-chart-id"
-      :options="chartOptions"
-      :data="chartData"
+     type="pie
+" :data="chartData" 
+:options="chartOptions" />
     />
     <h1>Bar</h1>
   </template>
   
   <script>
   import { Pie } from 'vue-chartjs'
-  import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+  import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
   import {ref} from "vue";
-  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+  ChartJS.register(ChartJS, ArcElement, Tooltip, Legend )
   export default {
     name: 'PieChart',
      components: { Pie },

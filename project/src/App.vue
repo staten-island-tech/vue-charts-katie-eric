@@ -21,8 +21,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <Router-view />
         <RouterLink to="/bar">Bar Chart</RouterLink>
-        <RouterLink to="/pie ">Pie Graph</RouterLink>
-        <RouterLink to="/options ">Options Graph</RouterLink>
+        <RouterLink to="/pie">Pie Graph</RouterLink>
+        <RouterLink to="/options">Options Graph</RouterLink>
       </nav>
       
      

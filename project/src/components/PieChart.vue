@@ -4,7 +4,7 @@
 " :data="chartData" 
 :options="chartOptions" />
     />
-    <h1>Bar</h1>
+    <h1>this is supposed to be pie</h1>
   </template>
   
   <script>
@@ -28,7 +28,7 @@
       return {
         chartData: {
           labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia',  ],
-          datasets: [ { data: [malneo, accexceptdrug, alz] } ]
+          datasets: [ { data: [malneo, accexceptdrug, alz, 10] } ]
         },
         chartOptions: {
           responsive: true

@@ -4,11 +4,17 @@
 </template>
 
 <script>
+import BarChart from '../components/optionsChart.vue'
+import {ref} from "vue";
 
 export default {
+  name: 'App',
+  components: { BarChart },
+
     data(){
         return {
-            leading_cause:[ ],
+            LeadingCause:[ ],
+            count: 0,
         };
     },
     mounted: function(){
@@ -22,7 +28,11 @@ export default {
                 );
                 const data = await results.json();
                 this.LeadingCause = data.results
-                // console.log(data.leading_cause.includes("Malignant"));
+                
+                const count = ref('0');
+                data
+                .filter(element => element.leading_cause.includes ('Malignant'))
+                .forEach(element => console.log(count.value++));
                 console.log(data);
             } catch(error){
                 console.log(error);

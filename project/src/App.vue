@@ -18,8 +18,8 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <h1 class="title">Occurences of Causes of Death from 2007 to 2014</h1> <br>
   <nav>
-        <RouterLink to="/bar">Bar Chart</RouterLink>
-        <RouterLink to="/pie">Pie Graph</RouterLink>
+        <RouterLink to="/bar">Pie Chart</RouterLink>
+        <RouterLink to="/pie">Bar Graph</RouterLink>
         <RouterLink to="/options">Options Graph</RouterLink>
       </nav>
       <br>

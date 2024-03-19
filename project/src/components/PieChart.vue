@@ -4,7 +4,6 @@
       :options="chartOptions"
       :data="chartData"
     />
-    <h1>this is supposed to be pie</h1>
   </template>
   
   <script>
@@ -16,12 +15,7 @@
     name: 'BarChart',
     components: { Bar },
     data() {
-      // const count = ref('0');
-      // function increaseCount(){
 
-      // }
-      
-      // let malneo = increaseCount(MalignantNeoplasms);
       let malneo = 10;
       let accexceptdrug = 13;
       let alz = 12;

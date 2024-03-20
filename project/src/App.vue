@@ -20,7 +20,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <nav>
         <RouterLink to="/bar">Pie Chart</RouterLink>
         <RouterLink to="/pie">Bar Graph</RouterLink>
-        <RouterLink to="/options">Options Graph</RouterLink>
+        <!-- <RouterLink to="/options">Options Graph</RouterLink> -->
       </nav>
       <br>
       <Router-view />

@@ -28,6 +28,9 @@
           responsive: true
         }
       }
+
+      }
+      
     }
-  }
+  
   </script>

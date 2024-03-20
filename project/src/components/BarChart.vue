@@ -15,7 +15,7 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export const data = {
-  labels: ['Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia','Cerebrovascular Disease'],
+  labels: ['Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'],
   datasets: [
     {
       backgroundColor: ['#B9D6F2', '#061A40', '#0353A4', '#006DAA'],

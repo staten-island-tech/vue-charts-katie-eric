@@ -16,7 +16,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1 class="title">Occurences of Causes of Death from 2007 to 2014</h1> <br>
+  <h1 class="title">Occurences of 5 Causes of Death from 2007 to 2014</h1> <br>
   <nav>
         <RouterLink to="/bar">Pie Chart</RouterLink>
         <RouterLink to="/">Bar Graph</RouterLink>

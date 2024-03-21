@@ -12,7 +12,7 @@ const router = createRouter({
       component: BarView
     },
     {
-      path: '/pie',
+      path: '/',
       name: 'pie',
       component: PieView
     },

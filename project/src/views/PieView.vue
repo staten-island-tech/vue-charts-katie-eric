@@ -5,6 +5,7 @@
 <script>
 import PieChart from '../components/PieChart.vue'
 import {ref} from "vue";
+import{defineProps} from "PieChart.vue";
 
 export default {
   name: 'App',

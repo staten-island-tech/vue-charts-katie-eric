@@ -1,10 +1,14 @@
 <template>
-  <PieChart />
+  <PieChart :msg="greeting" />
 </template>
 <!-- this is actually for bar graph -->
 <script>
 import PieChart from '../components/PieChart.vue'
 import {ref} from "vue";
+
+const greeting = ('Hello from Parent');
+
+
 
 export default {
   name: 'App',

@@ -1,16 +1,21 @@
 <template>
   <PieChart />
+  <h1>{{ leading_cause }}</h1>
 </template>
 <!-- this is actually for bar graph -->
 <script>
 import PieChart from '../components/PieChart.vue'
 import {ref} from "vue";
-import{defineProps} from "PieChart.vue";
+
+const props = defineProps({
+    leading_cause:String,
+    deaths: number }); 
 
 export default {
   name: 'App',
   components: { PieChart},
-  
+
+
   
   data(){
         return {

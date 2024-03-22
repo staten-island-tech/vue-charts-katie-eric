@@ -11,10 +11,6 @@
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
   import {ref} from "vue";
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-  const props = defineProps({
-    leading_cause:String,
-    deaths: number
-}); 
   
   export default {
     name: 'BarChart',

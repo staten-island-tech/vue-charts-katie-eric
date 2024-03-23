@@ -1,12 +1,12 @@
 <template>
-  <PieChart :msg= "greeting" />
+  <PieChart />
 </template>
 <!-- this is actually for bar graph -->
 <script>
 import PieChart from '../components/PieChart.vue'
 import {ref} from "vue";
 
-const greeting = 22;
+// const greeting = 22;
 
 
 

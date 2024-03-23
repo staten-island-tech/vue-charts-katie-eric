@@ -18,8 +18,8 @@ export const data = {
   labels: ['Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'],
   datasets: [
     {
-      backgroundColor: ['#B9D6F2', '#061A40', '#0353A4', '#006DAA'],
-      data: [40, 20, 80, 10]
+      backgroundColor: ['#084C61', '#DB504A', '#E3B505', '#56A3A6'],
+      data: [25, 25, 25, 25]
     }
   ]
 }

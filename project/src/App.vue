@@ -1,15 +1,3 @@
-<!-- <template>
-  <BarChart />
-</template>
-
-<script>
-import BarChart from '../src/components/BarChart.vue'
-
-export default {
-  name: 'App',
-  components: { BarChart }
-}
-</script> -->
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
@@ -18,9 +6,9 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <h1 class="title">Occurences of 5 Causes of Death from 2007 to 2014</h1> <br>
   <nav>
-        <RouterLink to="/bar">Pie Chart</RouterLink>
+        <RouterLink to="/pie">Pie Chart</RouterLink>
         <RouterLink to="/">Bar Graph</RouterLink>
-        <RouterLink to="/options">Options Graph</RouterLink>
+        <!-- <RouterLink to="/options">Options Graph</RouterLink> -->
       </nav>
       <br>
       <Router-view />
@@ -35,7 +23,13 @@ nav{
 </style>
 
 <style>
-
+.title{
+  text-align: center;
+  margin-bottom: 10px;
+}
+body{
+  background-color: #FFFFFF;
+}
 
 </style>
 

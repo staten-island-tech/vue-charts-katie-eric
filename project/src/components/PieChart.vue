@@ -1,5 +1,5 @@
 <template>
-<h1>MALIGNANT COUNT IS:{{ this.malneoCount }}</h1>
+<h1>MALIGNANT COUNT IS:{{ this.malneoCountProp }}</h1>
 <br>
 
     <Bar
@@ -15,14 +15,20 @@
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   export default {
     
-    props: ['malneoCount', 'accexceptdrugCount', 'alzCount', 'septicCount'],
+    props: {
+      malneoCountProp: Number,
+      accexceptdrugCountProp: Number,
+      alzCountProp: Number,
+      septicCountProp: Number,
+      },
+
     name: 'BarChart',
     components: { Bar },
     data() {
       return {
         chartData: {
           labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'  ],
-          datasets: [ { data: [this.malneoCount, this.accexceptdrugCount, this.alzCount, this.septicCount] } ]
+          datasets: [ { data: [this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] } ]
         },
         chartOptions: {
           responsive: true
@@ -39,4 +45,4 @@
     text-align: center;
   }
 </style>
-  <!-- malneo 70,acc 29, alz 11,septic 11 -->
+  <!-- malneo 87, acc 71, alz 30, septic 12 -->

@@ -1,14 +1,17 @@
 <template>
-  <PieChart :malneoCount = 'malcount' :accexceptdrugCount = 'accexdrugcount' :alzCount = 'alzcount' :septicCount = 'septiccount'/>
+  <PieChart :malneoCountProp = 'malcount' :accexceptdrugCountProp = 'accexdrugcount' :alzCountProp = 'alzcount' :septicCountProp = 'septiccount'/>
 </template>
 <!-- this is actually for bar graph -->
 <script>
 import PieChart from '../components/PieChart.vue'
-import {ref} from "vue";
+
 
 export default {
-  name: 'App',
-  components: { PieChart},
+  name: 'pie',
+  components: { 
+    PieChart
+  },
+  
   
     mounted: function(){
         this.fetchData();
@@ -22,38 +25,34 @@ export default {
                 const data = await results.json();
                 this.LeadingCause = data.results;
 
-                let accexdrugcount = ref('0');
-                data
-                .filter(element => element.leading_cause.includes ('Accidents'))
-                .forEach(() => console.log(accexdrugcount.value++));
+                let malcountarray = data.filter(element => element.leading_cause.includes ('Malignant'))
+                console.log(malcountarray.length);
 
-                const alzcount = ref('0');
-                data
-                .filter(element => element.leading_cause.includes ('Alzheimer'))
-                .forEach(() => console.log(alzcount.value++));
+                let accexdrugcountarray = data.filter(element => element.leading_cause.includes ('Accidents'))
+                console.log(accexdrugcountarray.length);
 
-                const septiccount = ref('0');
-                data
-                .filter(element => element.leading_cause.includes ('Septicemia'))
-                .forEach(() => console.log(septiccount.value++));
+                let alzcountarray = data.filter(element => element.leading_cause.includes ('Alzheimer'))
+                console.log(alzcountarray.length);
+
+                let septiccountarray = data.filter(element => element.leading_cause.includes ('Septicemia'))
+                console.log(septiccountarray.length);
 
                 console.log(data);
             } catch(error){
                 console.log(error);
             }
         },
-  data(){
+        
+        data(){
         return {
-            LeadingCause:[ ],
-            count: 0,
-            malcount: ref(''),
-            accexdrugcount: ref(''),
-            alzcount: ref(''),
-            septiccount: ref(''),
+            malcount: malcountarray,
+            accexdrugcount: accexdrugcountarray,
+            alzcount: alzcountarray,
+            septiccount: septiccountarray,
         };
     },
+
   },
-  components: {PieChart}
 }
 
 </script>

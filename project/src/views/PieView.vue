@@ -35,13 +35,10 @@ export default {
 
                 this.accexdrugcount = data.filter(element => element.leading_cause.includes ('Accidents'))
              
-
                 this.alzcount = data.filter(element => element.leading_cause.includes ('Alzheimer'))
-
 
                 this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
               
-
                 console.log(data);
             } catch(error){
                 console.log(error);

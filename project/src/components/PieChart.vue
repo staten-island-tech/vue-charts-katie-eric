@@ -1,5 +1,5 @@
 <template>
-<h1>MALIGNANT COUNT IS:{{ this.malneoCountProp }}</h1>
+<h1>MALIGNANT COUNT IS:{{ this.malneoCountProp }}</h1> 
 <br>
 
     <Bar
@@ -29,7 +29,7 @@
       return {
         chartData: {
           labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'  ],
-          datasets: [ { data: [this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] } ]
+          datasets: [{ data: [this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] } ]
         },
         chartOptions: {
           responsive: true

@@ -1,5 +1,5 @@
 <template>
-  <PieChart :malneoCountProp = 'malcount' :accexceptdrugCountProp = 'accexdrugcount' :alzCountProp = 'alzcount' :septicCountProp = 'septiccount'/>
+  <PieChart :malneoCountProp = 'malcount.length' :accexceptdrugCountProp = 'accexdrugcount.length' :alzCountProp = 'alzcount.length' :septicCountProp = 'septiccount.length'/>
 </template>
 <!-- this is actually for bar graph -->
 <script>
@@ -12,7 +12,14 @@ export default {
     PieChart
   },
   
-  
+  data(){
+        return {
+            malcount: [],
+            accexdrugcount: [],
+            alzcount: [],
+            septiccount:[],
+        };
+    },
     mounted: function(){
         this.fetchData();
     },
@@ -23,19 +30,19 @@ export default {
                     'https://data.cityofnewyork.us/resource/jb7j-dtam.json'
                 );
                 const data = await results.json();
-                this.LeadingCause = data.results;
+               let LeadingCause = data.results;
 
-                let malcountarray = data.filter(element => element.leading_cause.includes ('Malignant'))
-                console.log(malcountarray.length);
+                this.malcount = data.filter(element => element.leading_cause.includes ('Malignant'))
+                
 
-                let accexdrugcountarray = data.filter(element => element.leading_cause.includes ('Accidents'))
-                console.log(accexdrugcountarray.length);
+                this.accexdrugcount = data.filter(element => element.leading_cause.includes ('Accidents'))
+           
 
-                let alzcountarray = data.filter(element => element.leading_cause.includes ('Alzheimer'))
-                console.log(alzcountarray.length);
+                this.alzcount = data.filter(element => element.leading_cause.includes ('Alzheimer'))
+               
 
-                let septiccountarray = data.filter(element => element.leading_cause.includes ('Septicemia'))
-                console.log(septiccountarray.length);
+                this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
+          
 
                 console.log(data);
             } catch(error){
@@ -43,16 +50,9 @@ export default {
             }
         },
         
-        data(){
-        return {
-            malcount: malcountarray,
-            accexdrugcount: accexdrugcountarray,
-            alzcount: alzcountarray,
-            septiccount: septiccountarray,
-        };
-    },
 
   },
+ 
 }
 
 </script>

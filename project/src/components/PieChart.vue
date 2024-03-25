@@ -15,12 +15,7 @@
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   export default {
     
-    props: {
-      malneoCountProp: Number,
-      accexceptdrugCountProp: Number,
-      alzCountProp: Number,
-      septicCountProp: Number,
-      },
+   
 
     name: 'BarChart',
     components: { Bar },
@@ -34,8 +29,13 @@
           responsive: true
         }
       }
-
-      }
+      },
+      props: {
+      malneoCountProp: Number,
+      accexceptdrugCountProp: Number,
+      alzCountProp: Number,
+      septicCountProp: Number,
+      },
       
     }
   

@@ -1,29 +1,35 @@
 <template>
+<h1>MALIGNANT COUNT IS:{{ this.malneoCountProp }}</h1>
+<br>
+
     <Bar
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
     />
   </template>
-  <!-- bar chart -->
+
   <script>
   import { Bar } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-  import {ref} from "vue";
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   
   export default {
+    
+    props: {
+      malneoCountProp: Number,
+      accexceptdrugCountProp: Number,
+      alzCountProp: Number,
+      septicCountProp: Number,
+      },
+
     name: 'BarChart',
     components: { Bar },
     data() {
-
-      let malneo = 10;
-      let accexceptdrug = 13;
-      let alz = 12;
       return {
         chartData: {
-          labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia',  ],
-          datasets: [ { data: [malneo, accexceptdrug, alz, 10] } ]
+          labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'  ],
+          datasets: [ { data: [this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] } ]
         },
         chartOptions: {
           responsive: true
@@ -36,3 +42,9 @@
 
   
   </script>
+<style scoped>
+  h1{
+    text-align: center;
+  }
+</style>
+  <!-- malneo 87, acc 71, alz 30, septic 12 -->

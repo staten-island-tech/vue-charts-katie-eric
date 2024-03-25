@@ -32,7 +32,7 @@ export default {
                 const count = ref('0');
                 data
                 .filter(element => element.leading_cause.includes ('Malignant'))
-                .forEach(element => console.log(count.value++));
+                .forEach(element => (count.value++));
                 console.log(data);
             } catch(error){
                 console.log(error);

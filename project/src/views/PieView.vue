@@ -1,28 +1,22 @@
 <template>
-  <PieChart />
-  <h1>{{ leading_cause }}</h1>
+  <PieChart :malneoCountProp = 'malcount' :accexceptdrugCountProp = 'accexdrugcount' :alzCountProp = 'alzcount' :septicCountProp = 'septiccount'/>
 </template>
 <!-- this is actually for bar graph -->
 <script>
 import PieChart from '../components/PieChart.vue'
-import {ref} from "vue";
+
 
 const props = defineProps({
     leading_cause:String,
     deaths: number }); 
 
 export default {
-  name: 'App',
-  components: { PieChart},
-
-
+  name: 'pie',
+  components: { 
+    PieChart
+  },
   
-  data(){
-        return {
-            LeadingCause:[ ],
-            count: 0,
-        };
-    },
+  
     mounted: function(){
         this.fetchData();
     },
@@ -33,18 +27,36 @@ export default {
                     'https://data.cityofnewyork.us/resource/jb7j-dtam.json'
                 );
                 const data = await results.json();
-                this.LeadingCause = data.results
-                
-                const MalignantCount = ref('0');
-                data
-                .filter(element => element.leading_cause.includes ('Malignant'))
-                .forEach(element => console.log(MalignantCount.value++));
+                this.LeadingCause = data.results;
+
+                let malcountarray = data.filter(element => element.leading_cause.includes ('Malignant'))
+                console.log(malcountarray.length);
+
+                let accexdrugcountarray = data.filter(element => element.leading_cause.includes ('Accidents'))
+                console.log(accexdrugcountarray.length);
+
+                let alzcountarray = data.filter(element => element.leading_cause.includes ('Alzheimer'))
+                console.log(alzcountarray.length);
+
+                let septiccountarray = data.filter(element => element.leading_cause.includes ('Septicemia'))
+                console.log(septiccountarray.length);
+
                 console.log(data);
             } catch(error){
                 console.log(error);
             }
         },
-  }
+        
+        data(){
+        return {
+            malcount: malcountarray,
+            accexdrugcount: accexdrugcountarray,
+            alzcount: alzcountarray,
+            septiccount: septiccountarray,
+        };
+    },
+
+  },
 }
 
 </script>

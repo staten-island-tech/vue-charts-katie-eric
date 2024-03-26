@@ -3,7 +3,8 @@
 
 <template>
   <div class="container">
-    <Bar v-if="loaded" :data="chartData" />
+    <Bar :options="chartOptions"
+      :data="chartData" />
 
   </div>
   
@@ -15,16 +16,26 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-export const data = {
-  labels: ['Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'],
-  datasets: [
-    {
-      backgroundColor: ['#084C61', '#DB504A', '#E3B505', '#56A3A6'],
-      data: [25, 25, 25, 25]
-    }
-  ]
+export default { 
+ 
+  data() {
+      return {
+        chartData: {
+          labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'  ],
+          datasets: [ { data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] } ]
+        },
+        chartOptions: {
+          responsive: true
+        }
+      }
+      },
+      props: {
+      malneoCountProp: Number,
+      accexceptdrugCountProp: Number,
+      alzCountProp: Number,
+      septicCountProp: Number,
+      },
 }
-
 export const options = {
   responsive: true,
   maintainAspectRatio: true

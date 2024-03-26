@@ -5,7 +5,6 @@
 <script>
 import PieChart from '../components/PieChart.vue'
 
-
 export default {
   name: 'pie',
   components: { 
@@ -47,6 +46,8 @@ export default {
                 this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
           
 
+                this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
+              
                 console.log(data);
                 this.loaded=true
             } catch(error){

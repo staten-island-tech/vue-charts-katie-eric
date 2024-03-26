@@ -1,5 +1,5 @@
 <template>
-  <PieChart :malneoCountProp = 'malcount.length' :accexceptdrugCountProp = 'accexdrugcount.length' :alzCountProp = 'alzcount.length' :septicCountProp = 'septiccount.length'/>
+  <PieChart v-if="loaded" :malneoCountProp = 'malcount.length' :accexceptdrugCountProp = 'accexdrugcount.length' :alzCountProp = 'alzcount.length' :septicCountProp = 'septiccount.length'/>
 </template>
 <!-- this is actually for bar graph -->
 <script>
@@ -14,6 +14,7 @@ export default {
   
   data(){
         return {
+            loaded: false,
             malcount: [],
             accexdrugcount: [],
             alzcount: [],
@@ -25,6 +26,8 @@ export default {
     },
   methods: {
         fetchData: async function(){
+          this.loaded = false
+
             try{
                 const results = await fetch(
                     'https://data.cityofnewyork.us/resource/jb7j-dtam.json'
@@ -45,12 +48,12 @@ export default {
           
 
                 console.log(data);
+                this.loaded=true
             } catch(error){
                 console.log(error);
             }
         },
         
-
   },
  
 }

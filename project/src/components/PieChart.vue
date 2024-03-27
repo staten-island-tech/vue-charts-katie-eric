@@ -21,7 +21,12 @@
         chartData: {
           
           labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'  ],
-          datasets: [ { data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] } ]
+          datasets: [ 
+            { 
+              backgroundColor: ['#23263b', '#36395a', '#484c7a', '#5a5e9a'],
+              data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] 
+            } 
+          ]
         },
         chartOptions: {
           responsive: true,
@@ -30,7 +35,7 @@
              display: true,
                 labels: {
                   text: ['Number of Occurences'],
-                  color: '#084C61',
+                  color: '#23263b',
                 }
             }
           }

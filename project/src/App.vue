@@ -6,8 +6,8 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <h1 class="title">Occurences of 5 Causes of Death from 2007 to 2014</h1> <br>
   <nav>
-        <RouterLink to="/pie">Pie Chart</RouterLink>
-        <RouterLink to="/">Bar Graph</RouterLink>
+        <RouterLink to="/pie">Click me!</RouterLink>
+        <RouterLink to="/">More info</RouterLink>
         <!-- <RouterLink to="/options">Options Graph</RouterLink> -->
       </nav>
       <br>

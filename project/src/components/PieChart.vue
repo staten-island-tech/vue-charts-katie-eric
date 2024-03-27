@@ -21,7 +21,12 @@
         chartData: {
 
           labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia',  'Respritory', 'Suicide', 'Influenza', 'Liver Diesease' ],
-          datasets: [ { data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp, this.respritoryCountProp, this.suicideCountProp, this.fluCountProp, this.liverCountProp] } ]
+          datasets: [ 
+            { 
+            backgroundColor: ['#23263b', ] ,
+            data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp, this.respritoryCountProp, this.suicideCountProp, this.fluCountProp, this.liverCountProp] 
+          } 
+        ]
 
         },
         chartOptions: {

@@ -1,6 +1,5 @@
 <template>
-<br>
-<br>
+<br><br>
     <Bar 
       id="my-chart-id"
       

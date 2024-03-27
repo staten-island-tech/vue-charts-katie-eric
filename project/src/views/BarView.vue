@@ -1,21 +1,33 @@
 <template>
-  <Pie v-if="loaded" :malneoCountProp = 'malcount.length' :accexceptdrugCountProp = 'accexdrugcount.length' :alzCountProp = 'alzcount.length' :septicCountProp = 'septiccount.length'/>
+  <BarChart v-if="loaded" :malneoCountProp = 'malcount.length' :accexceptdrugCountProp = 'accexdrugcount.length' :alzCountProp = 'alzcount.length' :septicCountProp = 'septiccount.length'/>
 </template>
 
 <script lang="ts">
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-import { Pie } from 'vue-chartjs'
-import * as chartConfig from '../components/BarChart.vue'
+import BarChart from '../components/BarChart.vue'
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+// import { Pie } from 'vue-chartjs'
+// import * as chartConfig from '../components/BarChart.vue'
 
-ChartJS.register(ArcElement, Tooltip, Legend)
+// ChartJS.register(ArcElement, Tooltip, Legend)
 
 export default {
-  name: 'App',
-  components: {
-    Pie
+  // name: 'App',
+  // components: {
+  //   Pie
+  // },
+  name: 'Bar',
+  components: { 
+    BarChart
   },
   data() {
-    return chartConfig
+    return {
+    loaded: false,
+            malcount: [],
+            accexdrugcount: [],
+            alzcount: [],
+            septiccount:[],
+          }
+          
 
   }, 
   mounted: function(){
@@ -42,10 +54,8 @@ export default {
                
 
                 this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
-          
 
                 this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
-              
                 console.log(data);
                 this.loaded=true
             } catch(error){

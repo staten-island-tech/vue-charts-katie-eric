@@ -1,5 +1,6 @@
 <template>
-  <BarChart v-if="loaded" :malneoCountProp = 'malcount.length' :accexceptdrugCountProp = 'accexdrugcount.length' :alzCountProp = 'alzcount.length' :septicCountProp = 'septiccount.length'/>
+  <BarChart v-if="loaded" :malneoCountProp = 'malcount.length' :accexceptdrugCountProp = 'accexdrugcount.length' :alzCountProp = 'alzcount.length' :septicCountProp = 'septiccount.length' 
+  :respritoryCountProp="respritorycount.length" :suicideCountProp="suicidecount.length" :fluCountProp="flucount.length" :liverCountProp="livercount.length"/>
 </template>
 
 <script lang="ts">
@@ -11,10 +12,7 @@ import BarChart from '../components/BarChart.vue'
 // ChartJS.register(ArcElement, Tooltip, Legend)
 
 export default {
-  // name: 'App',
-  // components: {
-  //   Pie
-  // },
+
   name: 'Bar',
   components: { 
     BarChart
@@ -26,6 +24,10 @@ export default {
             accexdrugcount: [],
             alzcount: [],
             septiccount:[],
+            respritorycount:[],
+            suicidecount: [],
+            flucount: [],
+            livercount: [],
           }
           
 
@@ -45,17 +47,14 @@ export default {
                let LeadingCause = data.results;
 
                 this.malcount = data.filter(element => element.leading_cause.includes ('Malignant'))
-                
-
+                this.respritorycount = data.filter(element => element.leading_cause.includes ('Respiratory'))
                 this.accexdrugcount = data.filter(element => element.leading_cause.includes ('Accidents'))
-           
-
+                this.suicidecount = data.filter(element => element.leading_cause.includes ('Self-Harm'))
                 this.alzcount = data.filter(element => element.leading_cause.includes ('Alzheimer'))
-               
-
+                this.flucount = data.filter(element => element.leading_cause.includes ('Influenza'))
+                this.livercount = data.filter(element => element.leading_cause.includes ('Liver'))
                 this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
 
-                this.septiccount = data.filter(element => element.leading_cause.includes ('Septicemia'))
                 console.log(data);
                 this.loaded=true
             } catch(error){

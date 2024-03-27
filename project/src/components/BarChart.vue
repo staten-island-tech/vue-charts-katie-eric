@@ -24,8 +24,10 @@ export default {
   data() {
       return { chartConfig, 
         chartData: {
-          labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia', 'Respritory', 'Suicide', 'Influenza', 'Liver Diesease'],
-          datasets: [ { data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp, this.respritoryCountProp, this.suicideCountProp, this.fluCountProp, this.liverCountProp] } ]
+          labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia', 'Respiratory', 'Suicide', 'Influenza', 'Liver Diesease'],
+          datasets: [ { 
+            backgroundColor: ['#23263b', '#36395a', '#484c7a', '#5a5e9a', '#777aaf', '#9698c3', '#b6b7d5', '#d6d6e7'],
+            data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp, this.respritoryCountProp, this.suicideCountProp, this.fluCountProp, this.liverCountProp] } ]
         },
         chartOptions: {
           responsive: true

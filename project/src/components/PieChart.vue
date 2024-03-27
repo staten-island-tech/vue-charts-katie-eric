@@ -2,7 +2,6 @@
 <br><br>
     <Bar 
       id="my-chart-id"
-      
       :options="chartOptions"
       :data="chartData"
     />
@@ -15,18 +14,27 @@
   
   export default {
     
-   
-
     name: 'BarChart',
     components: { Bar },
     data() {
       return {
         chartData: {
+
           labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia',  'Respritory', 'Suicide', 'Influenza', 'Liver Diesease' ],
           datasets: [ { data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp, this.respritoryCountProp, this.suicideCountProp, this.fluCountProp, this.liverCountProp] } ]
+
         },
         chartOptions: {
-          responsive: true
+          responsive: true,
+          plugins:{
+            legend: {
+             display: true,
+                labels: {
+                  text: ['Number of Occurences'],
+                  color: '#084C61',
+                }
+            }
+          }
         }
       }
       },

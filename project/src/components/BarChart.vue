@@ -3,7 +3,7 @@
 
 <template>
   <div class="container">
-    <Bar :options="chartOptions"
+    <Pie :options="chartOptions"
       :data="chartData" />
 
   </div>
@@ -11,15 +11,18 @@
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Pie } from 'vue-chartjs'
+import * as chartConfig from '../components/BarChart.vue'
+
+ChartJS.register(ArcElement, Tooltip, Legend)
 
 export default { 
- 
+  name: 'PieChart',
+    components: { Pie },
   data() {
-      return {
+      return { chartConfig, 
         chartData: {
           labels: [ 'Malignant Neoplasms', 'Accidents Except Drug Posioning', 'Alzheimers Disease', 'Septicemia'  ],
           datasets: [ { data: [ this.malneoCountProp, this.accexceptdrugCountProp, this.alzCountProp, this.septicCountProp] } ]
